@@ -41,14 +41,21 @@ def check_password_strength(password):
 # Main function for Streamlit UI
 def main():
     st.title("Password Strength Checker")
+    st.write("Enter your password and we'll evaluate its strength.")
 
     # Input field for password
-    password = st.text_input("Enter your password:", type="password")
+    password = st.text_input("Password", type="password")
 
     # Check password strength if input is not empty
     if password:
         strength = check_password_strength(password)
         st.write("Strength:", strength)
+        st.write("---")
+        st.write("Password Tips:")
+        st.write("- Aim for a minimum length of 8 characters.")
+        st.write("- Include a mix of uppercase and lowercase letters.")
+        st.write("- Add numbers and special characters for extra security.")
+        st.write("- Avoid common words and phrases as passwords.")
 
 if __name__ == "__main__":
     main()
